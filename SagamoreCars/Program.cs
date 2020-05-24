@@ -1,9 +1,10 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
+using SagamoreCarsApiSDK;
 using System;
 
-namespace SagamoreCars
+namespace SagamoreCarsParser
 {
     class Program
     {
@@ -12,12 +13,21 @@ namespace SagamoreCars
         {
             Console.WriteLine("Start of program");
 
+            testSDKClient();//will be removed
+
             RegisterServices();
 
             var service = (IDemoService)_serviceProvider.GetService(typeof(IDemoService));
             service.StartSetupDB();
 
             Console.WriteLine("End of program");
+        }
+
+        //will be removed
+        private static void testSDKClient()
+        {
+            var testClient = new SagamoreCarsApiClient();
+            var allItems = testClient.WeatherForecastAsync().Result;
         }
 
         private static void RegisterServices()

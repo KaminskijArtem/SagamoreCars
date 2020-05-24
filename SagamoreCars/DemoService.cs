@@ -2,7 +2,7 @@
 using System;
 using System.Threading;
 
-namespace SagamoreCars
+namespace SagamoreCarsParser
 {
     internal class DemoService : IDemoService
     {
