@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagamoreCars", "SagamoreCars\SagamoreCars.csproj", "{5551AF7B-BC2F-4D3A-8B04-54BCBF84236F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagamoreCars", "SagamoreCars\SagamoreCars.csproj", "{5551AF7B-BC2F-4D3A-8B04-54BCBF84236F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagamoreCarsApi", "SagamoreCarsApi\SagamoreCarsApi.csproj", "{E35F193B-2099-48BD-9549-44C377724279}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5551AF7B-BC2F-4D3A-8B04-54BCBF84236F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5551AF7B-BC2F-4D3A-8B04-54BCBF84236F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5551AF7B-BC2F-4D3A-8B04-54BCBF84236F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35F193B-2099-48BD-9549-44C377724279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35F193B-2099-48BD-9549-44C377724279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35F193B-2099-48BD-9549-44C377724279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35F193B-2099-48BD-9549-44C377724279}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
