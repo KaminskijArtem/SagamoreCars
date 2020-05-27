@@ -27,7 +27,7 @@ namespace SagamoreCarsParser
         private static void testSDKClient()
         {
             var testClient = new SagamoreCarsApiClient();
-            var allItems = testClient.CarAdsAllAsync().Result;
+            var allItems = testClient.GetAllAsync().Result;
         }
 
         private static void RegisterServices()

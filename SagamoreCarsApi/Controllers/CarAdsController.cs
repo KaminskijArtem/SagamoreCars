@@ -21,14 +21,14 @@ namespace SagamoreCarsApi.Controllers
         }
 
         // GET: api/CarAds
-        [HttpGet]
+        [HttpGet(Name = "GetAll")]
         public async Task<ActionResult<IEnumerable<CarAd>>> GetCarAd()
         {
             return await _context.CarAd.ToListAsync();
         }
 
         // GET: api/CarAds/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "Get")]
         public async Task<ActionResult<CarAd>> GetCarAd(int id)
         {
             var carAd = await _context.CarAd.FindAsync(id);
@@ -44,7 +44,7 @@ namespace SagamoreCarsApi.Controllers
         // PUT: api/CarAds/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
+        [HttpPut("{id}", Name = "Put")]
         public async Task<IActionResult> PutCarAd(int id, CarAd carAd)
         {
             if (id != carAd.Id)
@@ -76,7 +76,7 @@ namespace SagamoreCarsApi.Controllers
         // POST: api/CarAds
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
+        [HttpPost(Name = "Post")]
         public async Task<ActionResult<CarAd>> PostCarAd(CarAd carAd)
         {
             _context.CarAd.Add(carAd);
@@ -86,7 +86,7 @@ namespace SagamoreCarsApi.Controllers
         }
 
         // DELETE: api/CarAds/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}", Name = "Delete")]
         public async Task<ActionResult<CarAd>> DeleteCarAd(int id)
         {
             var carAd = await _context.CarAd.FindAsync(id);
