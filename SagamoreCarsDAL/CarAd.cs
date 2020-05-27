@@ -6,5 +6,6 @@ namespace SagamoreCarsDAL
     {
         public int Id { get; set; }
         public string Href { get; set; }
+        public int Cost { get; set; }
     }
 }

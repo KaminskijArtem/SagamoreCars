@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SagamoreCarsDAL;
 
 namespace SagamoreCarsDAL.Migrations
 {
     [DbContext(typeof(SagamoreCarsDBContext))]
-    partial class SagamoreCarsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200527205344_AddCost")]
+    partial class AddCost
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
