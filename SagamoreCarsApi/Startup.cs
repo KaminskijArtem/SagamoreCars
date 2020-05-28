@@ -67,6 +67,7 @@ namespace SagamoreCarsApi
 
             using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
+                scope.ServiceProvider.GetService<SagamoreCarsDBContext>().Database.EnsureDeleted();
                 scope.ServiceProvider.GetService<SagamoreCarsDBContext>().Database.Migrate();
             }
         }

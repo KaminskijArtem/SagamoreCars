@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagamoreCarsParser", "SagamoreCars\SagamoreCarsParser.csproj", "{5551AF7B-BC2F-4D3A-8B04-54BCBF84236F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagamoreCarsApi", "SagamoreCarsApi\SagamoreCarsApi.csproj", "{E35F193B-2099-48BD-9549-44C377724279}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagamoreCarsApiSDK", "SagamoreCarsApiSDK\SagamoreCarsApiSDK.csproj", "{238A7309-C596-4A03-974F-E0D7168D04B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagamoreCarsDAL", "SagamoreCarsDAL\SagamoreCarsDAL.csproj", "{25F03DE6-B999-477E-BFDE-582295408C7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagamoreCarsDAL", "SagamoreCarsDAL\SagamoreCarsDAL.csproj", "{25F03DE6-B999-477E-BFDE-582295408C7E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagamoreCarsParser", "SagamoreCarsParser\SagamoreCarsParser.csproj", "{1252E6E9-8F60-4EA9-83A8-F071331B3EE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5551AF7B-BC2F-4D3A-8B04-54BCBF84236F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5551AF7B-BC2F-4D3A-8B04-54BCBF84236F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5551AF7B-BC2F-4D3A-8B04-54BCBF84236F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5551AF7B-BC2F-4D3A-8B04-54BCBF84236F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E35F193B-2099-48BD-9549-44C377724279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E35F193B-2099-48BD-9549-44C377724279}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E35F193B-2099-48BD-9549-44C377724279}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{25F03DE6-B999-477E-BFDE-582295408C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25F03DE6-B999-477E-BFDE-582295408C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25F03DE6-B999-477E-BFDE-582295408C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1252E6E9-8F60-4EA9-83A8-F071331B3EE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1252E6E9-8F60-4EA9-83A8-F071331B3EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1252E6E9-8F60-4EA9-83A8-F071331B3EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1252E6E9-8F60-4EA9-83A8-F071331B3EE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

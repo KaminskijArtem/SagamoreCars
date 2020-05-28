@@ -20,13 +20,11 @@ namespace SagamoreCarsApiSDK
         private string _baseUrl = "https://localhost:44331";
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
-
         public SagamoreCarsApiClient()
         {
             _httpClient = new System.Net.Http.HttpClient();
             _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings);
         }
-
         public SagamoreCarsApiClient(System.Net.Http.HttpClient httpClient)
         {
             _httpClient = httpClient;
@@ -506,6 +504,12 @@ namespace SagamoreCarsApiSDK
 
         [Newtonsoft.Json.JsonProperty("href", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Href { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("cost", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int Cost { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("year", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int Year { get; set; }
 
 
     }
