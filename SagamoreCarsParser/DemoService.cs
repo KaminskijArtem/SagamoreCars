@@ -52,10 +52,11 @@ namespace SagamoreCarsParser
                     Cost = int.Parse(cost),
                     Year = int.Parse(year)
                 };
-                var result = apiClient.PostAsync(carAd).GetAwaiter();
+
+                apiClient.PostAsync(carAd).GetAwaiter();
 
                 Console.WriteLine(@"{0} {1} {2}", href, year, cost);
-                //Thread.Sleep(100);
+                Thread.Sleep(300);
             }
             return isContinue;
         }

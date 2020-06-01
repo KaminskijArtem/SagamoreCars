@@ -16,7 +16,10 @@ namespace SagamoreCarsParser
             RegisterServices();
 
             var service = (IDemoService)_serviceProvider.GetService(typeof(IDemoService));
-            service.StartSetupDB();
+            while (true)
+            {
+                service.StartSetupDB();
+            }
 
             Console.WriteLine("End of program");
         }
