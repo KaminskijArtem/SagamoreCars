@@ -11,13 +11,12 @@ namespace SagamoreCarsParser
         public void StartSetupDB()
         {
             var page = 0;
-            var url = @"https://cars.av.by/honda/civic/page/" + page;
+            var url = @"https://cars.av.by/page/" + page;
 
             while (true)
             {
                 url = url.Substring(0, url.Length - (page++).ToString().Length) + page;
-                var isContinue = ParseAnnouncements(url);
-                if (!isContinue)
+                if (!ParseAnnouncements(url))
                     break;
             }
         }
@@ -35,7 +34,7 @@ namespace SagamoreCarsParser
             var allAnnouncements = htmlDoc.DocumentNode
                 .SelectNodes("//div[@class = 'listing-wrap']/div[contains(@class, 'listing-item')]");
 
-            if (allAnnouncements.Count < 25)
+            if (allAnnouncements.Count < 20)
                 isContinue = false;
 
             foreach (var announcement in allAnnouncements)
@@ -46,19 +45,35 @@ namespace SagamoreCarsParser
                 var cost = announcement.SelectSingleNode(".//div[@class = 'listing-item-price']/small").InnerText
                     .Replace(" ", string.Empty);
 
-                var carAd = new CarAd()
+                try
                 {
-                    Href = href,
-                    Cost = int.Parse(cost),
-                    Year = int.Parse(year)
-                };
-
-                apiClient.PostAsync(carAd).GetAwaiter();
-
-                Console.WriteLine(@"{0} {1} {2}", href, year, cost);
-                Thread.Sleep(300);
+                    var existingCarAd = apiClient.GetAsync(href).Result;
+                }
+                catch (AggregateException ex)
+                {
+                    var innerException = (ApiException)ex.InnerException;
+                    if (innerException.StatusCode == 404)
+                        AddNewCarAd(href, year, cost);
+                    else
+                        throw;
+                }
             }
             return isContinue;
+        }
+
+        private void AddNewCarAd(string href, string year, string cost)
+        {
+            var carAd = new CarAd()
+            {
+                Href = href,
+                Cost = int.Parse(cost),
+                Year = int.Parse(year)
+            };
+
+            apiClient.PostAsync(carAd).GetAwaiter();
+
+            Console.WriteLine(@"{0} {1} {2} Imported", href, year, cost);
+            //Thread.Sleep(300);
         }
     }
 }

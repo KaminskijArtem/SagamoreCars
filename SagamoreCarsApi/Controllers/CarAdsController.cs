@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -31,7 +32,8 @@ namespace SagamoreCarsApi.Controllers
         [HttpGet("{href}", Name = "Get")]
         public async Task<ActionResult<CarAd>> GetCarAd(string href)
         {
-            var carAd = await _context.CarAd.FindAsync(href);
+            var s = HttpUtility.UrlDecode(href);
+            var carAd = await _context.CarAd.FindAsync(HttpUtility.UrlDecode(href));
 
             if (carAd == null)
             {
