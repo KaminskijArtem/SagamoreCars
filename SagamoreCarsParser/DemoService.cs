@@ -11,12 +11,13 @@ namespace SagamoreCarsParser
         public void StartSetupDB()
         {
             var page = 0;
-            var url = @"https://cars.av.by/page/" + page;
+            var url = $"https://cars.av.by/search/page/--page--?year_from=&year_to=&currency=USD&price_from=&price_to=&body_id=&engine_volume_min=&engine_volume_max=&driving_id=&mileage_min=&mileage_max=&region_id=&interior_material=&interior_color=&exchange=&search_time=";
 
             while (true)
             {
-                url = url.Substring(0, url.Length - (page++).ToString().Length) + page;
-                if (!ParseAnnouncements(url))
+                //url = url.Substring(0, url.Length - (page++).ToString().Length) + page;
+                page++;
+                if (!ParseAnnouncements(url.Replace("--page--", page.ToString())))
                     break;
             }
         }
@@ -48,6 +49,7 @@ namespace SagamoreCarsParser
                 try
                 {
                     var existingCarAd = apiClient.GetAsync(href).Result;
+                    Console.WriteLine(@"- {0}", existingCarAd.Href);
                 }
                 catch (AggregateException ex)
                 {
