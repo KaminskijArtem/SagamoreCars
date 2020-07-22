@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SagamoreCarsParser
 {
-    internal interface IDemoService
+    internal interface IImportService
     {
         void StartSetupDB();
     }

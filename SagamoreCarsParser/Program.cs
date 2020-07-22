@@ -15,7 +15,7 @@ namespace SagamoreCarsParser
 
             RegisterServices();
 
-            var service = (IDemoService)_serviceProvider.GetService(typeof(IDemoService));
+            var service = (IImportService)_serviceProvider.GetService(typeof(IImportService));
             while (true)
             {
                 service.StartSetupDB();
@@ -28,7 +28,7 @@ namespace SagamoreCarsParser
         {
             var collection = new ServiceCollection();
             var builder = new ContainerBuilder();
-            builder.RegisterType<DemoService>().As<IDemoService>();
+            builder.RegisterType<ImportService>().As<IImportService>();
             builder.Populate(collection);
             var appContainer = builder.Build();
             _serviceProvider = new AutofacServiceProvider(appContainer);

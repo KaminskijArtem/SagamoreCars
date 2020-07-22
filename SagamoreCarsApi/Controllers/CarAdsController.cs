@@ -29,11 +29,10 @@ namespace SagamoreCarsApi.Controllers
         }
 
         // GET: api/CarAds/5
-        [HttpGet("{href}", Name = "Get")]
-        public async Task<ActionResult<CarAd>> GetCarAd(string href)
+        [HttpGet("{id}", Name = "Get")]
+        public async Task<ActionResult<CarAd>> GetCarAd(int id)
         {
-            var s = HttpUtility.UrlDecode(href);
-            var carAd = await _context.CarAd.FindAsync(HttpUtility.UrlDecode(href));
+            var carAd = await _context.CarAd.FindAsync(id);
 
             if (carAd == null)
             {
@@ -82,6 +81,7 @@ namespace SagamoreCarsApi.Controllers
         public async Task<ActionResult<CarAd>> PostCarAd(CarAd carAd)
         {
             _context.CarAd.Add(carAd);
+
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCarAd", new { id = carAd.Id }, carAd);

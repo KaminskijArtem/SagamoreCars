@@ -20,19 +20,19 @@ namespace SagamoreCarsDAL.Migrations
 
             modelBuilder.Entity("SagamoreCarsDAL.CarAd", b =>
                 {
-                    b.Property<string>("Href")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
 
                     b.Property<int>("Cost")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
+                    b.Property<string>("Href")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
 
-                    b.HasKey("Href");
+                    b.HasKey("Id");
 
                     b.ToTable("CarAd");
                 });
